@@ -1,16 +1,6 @@
-# This is a sample Python script.
+from zeep import Client
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+client = Client('http://www.soapclient.com/xml/soapresponder.wsdl')
+result = client.service.Method1(bstrParam1='Hello, World!', bstrParam2='Hello, Python!')
 
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+print(result)
